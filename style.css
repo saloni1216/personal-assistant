@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
     width: 100%;
     height: 100%;
@@ -15,28 +16,36 @@ body{
     gap: 30px;
     flex-direction: column;
 }
+
 #logo{
     width: 30vw;
 }
+
+/* Heading and Text Styling */
 h1{
     color: aqua;
     font-family: "Playfair Display", serif;
 }
-#name{
+
+#name, #va{
     color: rgb(237, 9, 158);
     font-size: 45px;
 }
+
 #va{
     color: rgb(46, 91, 217);
-    font-size: 45px;
 }
+
+/* Hidden Voice Element */
 #voice{
     width: 200px;
     display: none;
 }
+
+/* Button Styling */
 #btn{
     width: 30%;
-    background: linear-gradient(to right,rgb(242, 6, 210), rgb(3, 3, 239));
+    background: linear-gradient(to right, rgb(242, 6, 210), rgb(3, 3, 239));
     padding: 10px;
     display: flex;
     align-items: center;
@@ -49,8 +58,46 @@ h1{
     border: none;
     transition: 0.5s;
 }
+
 #btn:hover{
     box-shadow: 2px 2px 20px rgb(242, 6, 210), 2px 2px 20px rgb(3, 3, 239);
     letter-spacing: 2px;
     cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) { /* Tablet */
+    #logo {
+        width: 50vw;
+    }
+
+    #name, #va {
+        font-size: 35px;
+    }
+
+    #btn {
+        width: 50%;
+        font-size: 18px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) { /* Mobile */
+    #logo {
+        width: 70vw;
+    }
+
+    #name, #va {
+        font-size: 28px;
+    }
+
+    #btn {
+        width: 70%;
+        font-size: 16px;
+        padding: 6px;
+    }
+
+    body {
+        gap: 20px;
+    }
 }
