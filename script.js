@@ -9,7 +9,8 @@ function speak(text) {
     text_speak.rate = 1;
     text_speak.pitch = 1;
     text_speak.volume = 1;
-   //text_speak.lang = 'hi-GB;
+   // text_speak.lang = 'hi-GB'
+   
     
     window.speechSynthesis.speak(text_speak);
 }
@@ -19,11 +20,11 @@ function wishme() {
     let day = new Date();
     let hours = day.getHours();
     if (hours >= 0 && hours < 12) {
-        speak("Hello, GoodMorning");
+        speak("Hello, GoodMorning , I am Alex your virtual ai assistant here what can i help you ");
     } else if (hours >= 12 && hours < 16) {
-        speak("Hello, GoodAfternoon ");
+        speak("Hello, GoodAfternoon I am Alex your virtual ai assistant here what can i help you ");
     } else {
-        speak("Hello, GoodEvening ");
+        speak("Hello, GoodEvening I am Alex your virtual ai assistant here what can i help you ");
     }
 }
 window.addEventListener('load',() =>{
@@ -53,10 +54,10 @@ function takeCommand(message) {
     voice.style.display = "none";
 
     if (message.includes("hello") || message.includes("hey") || message.includes("hii")) {
-        speak("Hello Ma'am, what can I help you with?");
+        speak("Hello, what can I help you with?");
     } 
-    else if (message.includes("who are you")) {
-        speak("I am a virtual assistant, created by Saloni Ma'am.");
+    else if (message.includes("who are you") || message.includes("tell me about yourself")) {
+        speak("I am a virtual ai assistant, created by Saloni Singh.");
     } 
     else if (message.includes("how are you")) {
         speak("I am fine, what about you");
@@ -65,7 +66,7 @@ function takeCommand(message) {
         speak("yes,  very well");
     } 
     else if (message.includes("i love you")) {
-        speak("I love you so much, Saloni baby, you are so cute, beautiful, you are mine only, no one can like you ");
+        speak("I love you too baby");
     } 
     else if (message.includes("open youtube")) {
         speak("Opening YouTube...");
@@ -76,7 +77,7 @@ function takeCommand(message) {
         window.open("calculator://"); // Note: This may not work in all browsers
     }
      else {
-        let searchQuery = message.replace(/Vaibhav|web|app/gi, "").trim();
+        let searchQuery = message.replace(/Alex|web|app/gi, "").trim();
         let finalText = `This is what I found on the internet regarding ${searchQuery}`;
         speak(finalText);
         window.open(`https://www.google.com/search?q=${searchQuery}`);
