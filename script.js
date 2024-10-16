@@ -20,11 +20,11 @@ function wishme() {
     let day = new Date();
     let hours = day.getHours();
     if (hours >= 0 && hours < 12) {
-        speak("Hello, GoodMorning , I am Alex your virtual ai assistant here what can i help you ");
+        speak("Hello GoodMorning , I am Alex, here what can i help you ");
     } else if (hours >= 12 && hours < 16) {
-        speak("Hello, GoodAfternoon I am Alex your virtual ai assistant here what can i help you ");
+        speak("Hello GoodAfternoon, I am Alex,  what can i help you ");
     } else {
-        speak("Hello, GoodEvening I am Alex your virtual ai assistant here what can i help you ");
+        speak("Hello GoodEvening, I am Alex, here what can i help you ");
     }
 }
 window.addEventListener('load',() =>{
@@ -62,6 +62,15 @@ function takeCommand(message) {
     else if (message.includes("how are you")) {
         speak("I am fine, what about you");
     } 
+    else if (message.includes("what is your name") || message.includes("what's your name")) {
+        speak("  My name is Alex, I'm a virtual assistant");
+    } 
+    else if (message.includes("what can you do")) {
+        speak("I can talk with you and answer some simple questions.");
+    }
+    else if (message.includes("tell me a joke")) {
+        speak("Why did the chicken go to the seance? To get to the other side.");
+    }
     else if (message.includes("can you give me a answer")) {
         speak("yes,  very well");
     } 
